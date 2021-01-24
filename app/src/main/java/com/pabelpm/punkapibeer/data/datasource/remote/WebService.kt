@@ -1,6 +1,7 @@
 package com.pabelpm.punkapibeer.data.datasource.remote
 
 
+import com.pabelpm.punkapibeer.data.dto.BeerDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 

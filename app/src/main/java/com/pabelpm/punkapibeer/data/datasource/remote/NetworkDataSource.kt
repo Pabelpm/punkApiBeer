@@ -2,6 +2,7 @@ package com.pabelpm.punkapibeer.data.datasource.remote
 
 import com.example.openbankmobiletest.repository.response.Resource
 import com.example.openbankmobiletest.repository.response.ResponseHandler
+import com.pabelpm.punkapibeer.data.dto.BeerDto
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 

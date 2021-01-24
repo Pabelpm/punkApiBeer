@@ -1,5 +1,6 @@
 package com.pabelpm.punkapibeer.domain.mappers.dtomapper
 
+import com.pabelpm.punkapibeer.data.dto.BeerDto
 import com.pabelpm.punkapibeer.domain.entities.Beer
 import com.pabelpm.punkapibeer.domain.mappers.Mapper
 
