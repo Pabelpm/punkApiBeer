@@ -1,8 +1,8 @@
-package com.pabelpm.punkapibeer.builders
+package com.pabelpm.punkapibeer.buildersAndroidTest
 
 import com.pabelpm.punkapibeer.data.dto.BeerDto
 
-class BeerDtoBuilder {
+class BeerDtoBuilderAT {
 
     private var id = 1
     private var name = "Buzz"
@@ -19,24 +19,24 @@ class BeerDtoBuilder {
     private var srm = 10
     private var ph = 4.4
     private var attenuation_level = 75
-    private var volume = VolumeDtoBuilder().withValue(20).withUnit("litres").build()
-    private var boil_dvolume = BoilVolumeDtoBuilder().withValue(25).withUnit("litres").build()
-    private var method = MethodDtoBuilder().withMashTempList(
+    private var volume = VolumeDtoBuilderAT().withValue(20).withUnit("litres").build()
+    private var boil_dvolume = BoilVolumeDtoBuilderAT().withValue(25).withUnit("litres").build()
+    private var method = MethodDtoBuilderAT().withMashTempList(
         arrayListOf(
-            MashTempDtoBuilder().withTemp(
-                TempDtoBuilder().withValue(64).withUnit("celsius").build()
+            MashTempDtoBuilderAT().withTemp(
+                TempDtoBuilderAT().withValue(64).withUnit("celsius").build()
             ).withDuration(75).build()
         )
     ).build()
-    private var ingredients = IngredientsDtoBuilder().withMaltList(
+    private var ingredients = IngredientsDtoBuilderAT().withMaltList(
         arrayListOf(
-            MaltDtoBuilder().withName("Maris Otter Extra Pale")
-                .withAmount(AmountDtoBuilder().withValue(3.3).withUnit("kilograms").build()).build()
+            MaltDtoBuilderAT().withName("Maris Otter Extra Pale")
+                .withAmount(AmountDtoBuilderAT().withValue(3.3).withUnit("kilograms").build()).build()
         )
     ).withHopsList(
         arrayListOf(
-            HopDtoBuilder().withName("Fuggles")
-                .withAmount(AmountDtoBuilder().withValue(25.0).withUnit("grams").build())
+            HopDtoBuilderAT().withName("Fuggles")
+                .withAmount(AmountDtoBuilderAT().withValue(25.0).withUnit("grams").build())
                 .withAdd("start").withAttribute("bitter").build()
         )
     ).withYeast("Wyeast 1056 - American Ale™").build()

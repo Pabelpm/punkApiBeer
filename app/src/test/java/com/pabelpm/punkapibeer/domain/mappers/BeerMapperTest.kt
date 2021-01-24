@@ -1,7 +1,7 @@
 package com.pabelpm.punkapibeer.domain.mappers
 
 
-import com.pabelpm.punkapibeer.builders.BeerDtoBuilder
+import com.pabelpm.punkapibeer.buildersAndroidTest.BeerDtoBuilder
 import com.pabelpm.punkapibeer.domain.entities.Beer
 import com.pabelpm.punkapibeer.domain.mappers.dtomapper.BeerMapper
 import org.junit.Assert

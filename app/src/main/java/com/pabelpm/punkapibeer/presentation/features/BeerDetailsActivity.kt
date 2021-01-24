@@ -61,6 +61,4 @@ class BeerDetailsActivity : BaseActivity() {
         supportActionBar?.title = "Beer details"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
-
-
 }

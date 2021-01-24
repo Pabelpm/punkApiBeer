@@ -1,7 +1,5 @@
-package com.pabelpm.punkapibeer.builders
+package com.pabelpm.punkapibeer.buildersAndroidTest
 
-import com.pabelpm.punkapibeer.data.dto.AmountDto
-import com.pabelpm.punkapibeer.data.dto.BoilVolumeDto
 import com.pabelpm.punkapibeer.data.dto.FermentationDto
 import com.pabelpm.punkapibeer.data.dto.TempDto
 

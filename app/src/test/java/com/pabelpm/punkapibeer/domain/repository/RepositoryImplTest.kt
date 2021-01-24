@@ -1,22 +1,7 @@
 package com.pabelpm.punkapibeer.domain.repository
 
 
-import com.pabelpm.punkapibeer.builders.BeerDtoBuilder
-import com.pabelpm.punkapibeer.data.datasource.remote.NetworkDataSource
-import com.pabelpm.punkapibeer.data.datasource.remote.WebService
-import com.pabelpm.punkapibeer.data.datasource.response.Resource
-import com.pabelpm.punkapibeer.data.datasource.response.Status
-import com.pabelpm.punkapibeer.domain.mappers.dtomapper.BeerMapper
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import org.junit.Assert.assertEquals
-import org.junit.Before
-import org.junit.Ignore
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
-import org.mockito.Mock
-import org.mockito.Mockito
-import org.mockito.MockitoAnnotations
 
 @ExperimentalCoroutinesApi
 class RepositoryImplTest {

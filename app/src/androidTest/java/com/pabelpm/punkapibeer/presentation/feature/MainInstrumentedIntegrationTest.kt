@@ -8,6 +8,7 @@ import com.pabelpm.punkapibeer.presentation.features.MainActivity
 import com.pabelpm.punkapibeer.presentation.utils.ViewUtils
 import com.schibsted.spain.barista.assertion.BaristaListAssertions
 import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
+import com.schibsted.spain.barista.interaction.BaristaClickInteractions
 import com.schibsted.spain.barista.interaction.BaristaListInteractions
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -53,7 +54,18 @@ class MainInstrumentedIntegrationTest {
             R.id.beersRecyclerView,
             24,
             "Bad Pixie"
-        );
+        )
     }
+
+    @Test
+    fun us0003checkNavigationToBeerDetailsAndReturn() {
+        ViewUtils.waitForIdle(ViewUtils.SLEEP.LARGE,"Wait for response")
+        BaristaListInteractions.clickListItem(R.id.beersRecyclerView, 0)
+        ViewUtils.waitForIdle(ViewUtils.SLEEP.LARGE,"Wait for response")
+        assertDisplayed("Beer details")
+        BaristaClickInteractions.clickBack()
+        assertDisplayed("Punk Api Beer")
+    }
+
 
 }

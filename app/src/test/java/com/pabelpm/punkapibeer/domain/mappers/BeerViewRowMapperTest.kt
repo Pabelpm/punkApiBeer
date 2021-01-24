@@ -1,7 +1,7 @@
 package com.pabelpm.punkapibeer.domain.mappers
 
 
-import com.pabelpm.punkapibeer.builders.BeerDtoBuilder
+import com.pabelpm.punkapibeer.buildersAndroidTest.BeerDtoBuilder
 import com.pabelpm.punkapibeer.domain.mappers.dtomapper.BeerMapper
 import com.pabelpm.punkapibeer.domain.mappers.viewmapper.BeerViewRowMapper
 import com.pabelpm.punkapibeer.presentation.model.BeerViewRow

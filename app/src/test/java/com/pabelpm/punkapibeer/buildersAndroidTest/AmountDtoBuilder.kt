@@ -1,4 +1,4 @@
-package com.pabelpm.punkapibeer.builders
+package com.pabelpm.punkapibeer.buildersAndroidTest
 
 import com.pabelpm.punkapibeer.data.dto.AmountDto
 

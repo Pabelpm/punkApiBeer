@@ -1,20 +1,18 @@
-package com.pabelpm.punkapibeer.builders
+package com.pabelpm.punkapibeer.buildersAndroidTest
 
-import com.pabelpm.punkapibeer.data.dto.AmountDto
-import com.pabelpm.punkapibeer.data.dto.BoilVolumeDto
 import com.pabelpm.punkapibeer.data.dto.TempDto
 
-class TempDtoBuilder {
+class TempDtoBuilderAT {
 
     private var value = 0
     private var unit = ""
 
-    fun withValue(valueDto: Int): TempDtoBuilder {
+    fun withValue(valueDto: Int): TempDtoBuilderAT {
         this.value = valueDto
         return this
     }
 
-    fun withUnit(unitDto: String): TempDtoBuilder {
+    fun withUnit(unitDto: String): TempDtoBuilderAT {
         this.unit = unitDto
         return this
     }

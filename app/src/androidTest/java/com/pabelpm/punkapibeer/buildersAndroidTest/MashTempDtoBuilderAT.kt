@@ -1,21 +1,19 @@
-package com.pabelpm.punkapibeer.builders
+package com.pabelpm.punkapibeer.buildersAndroidTest
 
-import com.pabelpm.punkapibeer.data.dto.AmountDto
-import com.pabelpm.punkapibeer.data.dto.MaltDto
 import com.pabelpm.punkapibeer.data.dto.MashTempDto
 import com.pabelpm.punkapibeer.data.dto.TempDto
 
-class MashTempDtoBuilder {
+class MashTempDtoBuilderAT {
 
-    private var temp = TempDtoBuilder().build()
+    private var temp = TempDtoBuilderAT().build()
     private var duration = 1
 
-    fun withTemp(tempDto: TempDto): MashTempDtoBuilder {
+    fun withTemp(tempDto: TempDto): MashTempDtoBuilderAT {
         this.temp = tempDto
         return this
     }
 
-    fun withDuration(durationDto: Int): MashTempDtoBuilder {
+    fun withDuration(durationDto: Int): MashTempDtoBuilderAT {
         this.duration = durationDto
         return this
     }
