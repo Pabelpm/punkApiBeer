@@ -4,6 +4,7 @@ import com.pabelpm.punkapibeer.domain.entities.Beer
 import com.pabelpm.punkapibeer.domain.mappers.Mapper
 import com.pabelpm.punkapibeer.presentation.model.BeerViewDetails
 import com.pabelpm.punkapibeer.presentation.model.BeerViewRow
+import com.pabelpm.punkapibeer.presentation.views.ValueComponent
 
 
 class BeerViewDetailsMapper : Mapper<Beer, BeerViewDetails>() {
@@ -14,7 +15,9 @@ class BeerViewDetailsMapper : Mapper<Beer, BeerViewDetails>() {
     private fun mapBeer(source: Beer): BeerViewDetails = BeerViewDetails(
         source.name,
         source.description,
-        source.imageUrl
+        source.imageUrl,
+        source.volume,
+        source.boilVolume
     )
 
 }

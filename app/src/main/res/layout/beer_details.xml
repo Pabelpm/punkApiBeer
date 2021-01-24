@@ -44,5 +44,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameDetailsBeerTextView" />
 
+        <com.pabelpm.punkapibeer.presentation.views.ValueComponent
+            android:id="@+id/volumeValueComponent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionDetailsBeerTextView" />
+
+        <com.pabelpm.punkapibeer.presentation.views.ValueComponent
+            android:id="@+id/boilVolumeValueComponent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/volumeValueComponent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

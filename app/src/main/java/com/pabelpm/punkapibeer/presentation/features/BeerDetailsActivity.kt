@@ -9,6 +9,7 @@ import com.pabelpm.punkapibeer.R
 import com.pabelpm.punkapibeer.databinding.BeerDetailsBinding
 import com.pabelpm.punkapibeer.presentation.base.BaseActivity
 import com.pabelpm.punkapibeer.presentation.model.BeerViewDetails
+import com.pabelpm.punkapibeer.presentation.views.ValueComponent
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -52,11 +53,11 @@ class BeerDetailsActivity : BaseActivity() {
             .into(binding.imageDetailsBeerImageView)
         binding.nameDetailsBeerTextView.text = beerViewDetails.name
         binding.descriptionDetailsBeerTextView.text = beerViewDetails.description
+        binding.volumeValueComponent.updateComponent(ValueComponent.ValueComponentEntity("Volume",beerViewDetails.volume.value,beerViewDetails.volume.unit))
+        binding.boilVolumeValueComponent.updateComponent(ValueComponent.ValueComponentEntity("Boil Volume",beerViewDetails.boilVolume.value,beerViewDetails.boilVolume.unit))
     }
 
-
     private fun setToolbar() {
-        supportActionBar?.setIcon(getDrawable(R.drawable.ic_launcher_background))
         supportActionBar?.title = "Beer details"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }

@@ -6,11 +6,8 @@ import com.pabelpm.punkapibeer.data.dto.BoilVolumeDto
 import com.pabelpm.punkapibeer.data.dto.VolumeDto
 
 @Entity
-class Beer(
-    val id: Int,
-    val name: String,
-    val description: String,
-    val imageUrl: String,
-    val volume: ValueUnit,
-    val boilVolume: ValueUnit
+class ValueUnit(
+    //Can be use pairs, but now we can added new attributes
+    val value: Double,
+    val unit: String
 )
