@@ -28,4 +28,13 @@ class RepositoryImp @ExperimentalCoroutinesApi
             Resource(resource.status, null,resource.message)
         }
     }
+
+    override suspend fun getBeerById(id: Int): Resource<Beer> {
+        Log.i(TAG, "$REMOTE getBeerById")
+        val resource = networkDataSource.getBeerById(id)
+        return if(resource.status == Status.SUCCESS){
+            Resource(resource.status, resource.data?.let { beerMapper.transform(it) },resource.message)
+        }else{
+            Resource(resource.status, null,resource.message)
+        }    }
 }

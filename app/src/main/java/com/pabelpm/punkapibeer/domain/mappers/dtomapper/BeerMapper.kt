@@ -13,7 +13,8 @@ class BeerMapper : Mapper<BeerDto, Beer>() {
     private fun mapBeer(source: BeerDto): Beer = Beer(
         source.id,
         source.name,
-        source.description
+        source.description,
+        source.imageUrl
     )
 
 }

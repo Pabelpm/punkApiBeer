@@ -7,4 +7,6 @@ interface RepositoryInterface {
 
     suspend fun getBeersByPage(page : Int): Resource<List<Beer>>
 
+    suspend fun getBeerById(id:Int): Resource<Beer>
+
 }
