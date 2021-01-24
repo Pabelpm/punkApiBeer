@@ -13,9 +13,9 @@ class BeerDtoBuilder {
     private var image_url = "https://images.punkapi.com/v2/keg.png"
     private var abv = 4.5
     private var ibu = 60
-    private var target_fg = 1010
+    private var target_fg = 1010.0
     private var target_og = 1044
-    private var ebc = 20
+    private var ebc = 20.0
     private var srm = 10
     private var ph = 4.4
     private var attenuation_level = 75
