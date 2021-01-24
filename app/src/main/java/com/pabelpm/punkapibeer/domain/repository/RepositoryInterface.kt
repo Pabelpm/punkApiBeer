@@ -1,6 +1,6 @@
 package com.pabelpm.punkapibeer.domain.repository
 
-import com.example.openbankmobiletest.repository.response.Resource
+import com.pabelpm.punkapibeer.data.datasource.response.Resource
 import com.pabelpm.punkapibeer.domain.entities.Beer
 
 interface RepositoryInterface {

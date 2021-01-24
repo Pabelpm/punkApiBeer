@@ -19,7 +19,6 @@ class MainActivity : BaseActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.getPageOfBeers(1)
     }
 
     override fun bindViewActions() {
@@ -44,6 +43,12 @@ class MainActivity : BaseActivity() {
         viewModel.beersLiveDataError.observe(this, Observer {
             toastError("Beers could not be recovered, there is an error: $it")
         })
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getPageOfBeers(1)
 
     }
 }

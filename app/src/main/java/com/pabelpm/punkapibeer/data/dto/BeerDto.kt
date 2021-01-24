@@ -25,25 +25,25 @@ data class BeerDto(
     val abv: Double,
 
     @SerializedName("ibu")
-    val ibu: Int,
+    val ibu: Double,
 
     @SerializedName("target_fg")
     val targetFg: Int,
 
     @SerializedName("target_og")
-    val targetOg: Int,
+    val targetOg: Double,
 
     @SerializedName("ebc")
     val ebc: Int,
 
     @SerializedName("srm")
-    val srm: Int,
+    val srm: Double,
 
     @SerializedName("ph")
     val ph: Double,
 
     @SerializedName("attenuation_level")
-    val attenuationLevel: Int,
+    val attenuationLevel: Double,
 
     @SerializedName("volume")
     val volume: VolumeDto,

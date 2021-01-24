@@ -1,9 +1,9 @@
 package com.pabelpm.punkapibeer.domain.repository
 
 import android.util.Log
-import com.example.openbankmobiletest.repository.response.Resource
-import com.example.openbankmobiletest.repository.response.Status
 import com.pabelpm.punkapibeer.data.datasource.remote.NetworkDataSource
+import com.pabelpm.punkapibeer.data.datasource.response.Resource
+import com.pabelpm.punkapibeer.data.datasource.response.Status
 import com.pabelpm.punkapibeer.domain.entities.Beer
 import com.pabelpm.punkapibeer.domain.mappers.dtomapper.BeerMapper
 import kotlinx.coroutines.ExperimentalCoroutinesApi

@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.openbankmobiletest.repository.response.Status
+import com.pabelpm.punkapibeer.data.datasource.response.Status
 import com.pabelpm.punkapibeer.domain.entities.Beer
 import com.pabelpm.punkapibeer.domain.mappers.dtomapper.BeerMapper
 import com.pabelpm.punkapibeer.domain.repository.RepositoryInterface
