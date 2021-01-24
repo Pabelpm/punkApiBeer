@@ -1,9 +1,11 @@
 package com.pabelpm.punkapibeer.presentation.features
 
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.pabelpm.punkapibeer.databinding.ActivityMainBinding
 import com.pabelpm.punkapibeer.presentation.adapters.BeersAdapter
 import com.pabelpm.punkapibeer.presentation.base.BaseActivity
@@ -15,19 +17,38 @@ import com.pabelpm.punkapibeer.presentation.utils.toastError
 import com.pabelpm.punkapibeer.presentation.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     private val viewModel: MainViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
+    private var page = 1
+    private val adapter = BeersAdapter()
+
 
     override fun initializeView() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setAdapter(arrayListOf())
+        viewModel.getPageOfBeers(page)
     }
 
     override fun bindViewActions() {
         super.bindViewActions()
+
+        binding.beersRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    Log.d("onScrollStateChanged", "end")
+                    page += 1
+                    viewModel.getPageOfBeers(page)
+                    Log.d("onScrollStateChanged", "$page")
+
+                }
+            }
+        })
     }
 
     override fun observeViewModel() {
@@ -43,7 +64,7 @@ class MainActivity : BaseActivity() {
 
         viewModel.beersLiveDataSuccess.observe(
             this, Observer { beersViewList ->
-                setAdapter(beersViewList)
+                updateAndNotifyAdapter(beersViewList)
             })
         viewModel.beersLiveDataError.observe(this, Observer {
             toastError("Beers could not be recovered, there is an error: $it")
@@ -61,12 +82,10 @@ class MainActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.getPageOfBeers(1)
     }
 
 
     private fun setAdapter(beerViewRowList: List<BeerViewRow>) {
-        val adapter = BeersAdapter()
         binding.beersRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.beersRecyclerView.addItemDecoration(
             DividerItemDecoration(
@@ -84,6 +103,11 @@ class MainActivity : BaseActivity() {
                 viewModel.getBeerById(beerRow.id)
             }
         })
+    }
+
+    private fun updateAndNotifyAdapter(beerViewRowList: List<BeerViewRow>){
+        adapter.update(beerViewRowList)
+        adapter.notifyDataSetChanged()
     }
 
     private fun startBeerDetailsActivity(beerViewDetails: BeerViewDetails){

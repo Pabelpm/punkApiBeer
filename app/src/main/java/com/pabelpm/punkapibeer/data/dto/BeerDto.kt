@@ -28,13 +28,13 @@ data class BeerDto(
     val ibu: Double,
 
     @SerializedName("target_fg")
-    val targetFg: Int,
+    val targetFg: Double,
 
     @SerializedName("target_og")
     val targetOg: Double,
 
     @SerializedName("ebc")
-    val ebc: Int,
+    val ebc: Double,
 
     @SerializedName("srm")
     val srm: Double,

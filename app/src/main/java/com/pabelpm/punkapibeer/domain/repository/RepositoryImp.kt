@@ -21,9 +21,15 @@ class RepositoryImp @ExperimentalCoroutinesApi
     @ExperimentalCoroutinesApi
     override suspend fun getBeersByPage(page: Int): Resource<List<Beer>> {
         Log.i(TAG, "$REMOTE getBeersByPage")
+        //Check if have page in room
         val resource = networkDataSource.getBeersByPage(page)
         return if(resource.status == Status.SUCCESS){
-            Resource(resource.status, resource.data?.let { beerMapper.listTransform(it) },resource.message)
+            //Save in room PAGE/DATAx
+                try {
+                    Resource(resource.status, resource.data?.let { beerMapper.listTransform(it) },resource.message)
+                }catch (exception: java.lang.Exception){
+                    Resource(Status.ERROR, null,exception.message)
+                }
         }else{
             Resource(resource.status, null,resource.message)
         }
@@ -31,10 +37,12 @@ class RepositoryImp @ExperimentalCoroutinesApi
 
     override suspend fun getBeerById(id: Int): Resource<Beer> {
         Log.i(TAG, "$REMOTE getBeerById")
+        //Check if have beer in room
         val resource = networkDataSource.getBeerById(id)
         return if(resource.status == Status.SUCCESS){
             Resource(resource.status, resource.data?.let { beerMapper.transform(it) },resource.message)
         }else{
             Resource(resource.status, null,resource.message)
-        }    }
+        }
+    }
 }

@@ -31,6 +31,8 @@ class MainViewModel @ViewModelInject constructor(private val repositoryInterface
     val beerByIdLiveDataSuccess: LiveData<BeerViewDetails> get() = _beerByIdLiveDataSuccess
     private val _beerByIdLiveDataError = MutableLiveData<String>()
     val beerByIdLiveDataError: LiveData<String> get() = _beerByIdLiveDataError
+
+    private var allBeersList = arrayListOf<Beer>()
     
     fun getPageOfBeers(page:Int) {
         viewModelScope.launch {
@@ -41,8 +43,9 @@ class MainViewModel @ViewModelInject constructor(private val repositoryInterface
                 Status.SUCCESS -> {
                     _beersLiveDataSuccess.postValue(
                         resourceBeersByPage.data?.let { beersList ->
+                            allBeersList.addAll(beersList)
                             //mapperView
-                            BeerViewRowMapper().listTransform(beersList)
+                            BeerViewRowMapper().listTransform(allBeersList)
                         }
                     )
                 }
