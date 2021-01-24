@@ -14,7 +14,6 @@
   * Communication layer with Retrofit
   * Local repository with Room
   * Show images using glide android
-  * Navigation component
   * Using customs views
 
 ###### DoR

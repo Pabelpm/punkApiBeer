@@ -1,7 +1,8 @@
-package com.pabelpm.punkapibeer
+package com.pabelpm.punkapibeer.presentation.features
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.pabelpm.punkapibeer.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
