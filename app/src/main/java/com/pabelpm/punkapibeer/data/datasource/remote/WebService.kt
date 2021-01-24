@@ -12,5 +12,5 @@ interface WebService {
     suspend fun getBeersByPage(@Query(value = "page") page: Int): List<BeerDto>
 
     @GET("v2/beers/{id}")
-    suspend fun getBeerById(@Path(value = "id") id: Int): BeerDto
+    suspend fun getBeerById(@Path(value = "id") id: Int): List<BeerDto>
 }

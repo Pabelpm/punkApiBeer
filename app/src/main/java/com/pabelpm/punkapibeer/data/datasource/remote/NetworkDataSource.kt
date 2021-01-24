@@ -21,7 +21,7 @@ class NetworkDataSource @Inject constructor(private val webService: WebService) 
     suspend fun getBeerById(id: Int): Resource<BeerDto> {
         val responseHandler = ResponseHandler()
         return try {
-            responseHandler.handleSuccess(webService.getBeerById(id))
+            responseHandler.handleSuccess(webService.getBeerById(id)[0])
         }catch (e: Exception){
             responseHandler.handleException(e)
         }

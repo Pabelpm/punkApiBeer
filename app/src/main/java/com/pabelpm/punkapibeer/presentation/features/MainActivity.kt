@@ -51,10 +51,10 @@ class MainActivity : BaseActivity() {
 
 
         viewModel.beerByIdLiveDataSuccess.observe(
-            this, Observer { beer ->
-
+            this, Observer { beerViewDetails ->
+                startBeerDetailsActivity(beerViewDetails)
             })
-        viewModel.beerByIdLiveDataSuccess.observe(this, Observer {
+        viewModel.beerByIdLiveDataError.observe(this, Observer {
             toastError("Beer could not be recovered, there is an error: $it")
         })
     }
@@ -87,6 +87,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun startBeerDetailsActivity(beerViewDetails: BeerViewDetails){
+        startActivity(BeerDetailsActivity.newIntent(this, beerViewDetails))
 
     }
 }

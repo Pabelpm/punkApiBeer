@@ -12,7 +12,6 @@ class BeerViewDetailsMapper : Mapper<Beer, BeerViewDetails>() {
     }
 
     private fun mapBeer(source: Beer): BeerViewDetails = BeerViewDetails(
-
         source.name,
         source.description,
         source.imageUrl
